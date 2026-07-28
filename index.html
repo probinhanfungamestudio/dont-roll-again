@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Don't Roll Again</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+<body>
+
+
+
+<button id="pauseBtn" onclick="pauseGame()">||</button>
+
+
+<button id="infoBtn" onclick="openHowTo()">
+    i
+</button>
+
+
+
+
+<div class="casio">
+
+
+
+<h1>DON'T ROLL AGAIN</h1>
+
+
+
+<div id="time">
+TIME: 3.00
+</div>
+
+
+
+<div id="screen">
+0
+</div>
+
+
+
+
+<button onclick="roll()">
+ROLL
+</button>
+
+
+<button id="nextBtn" onclick="next()" disabled>
+NEXT
+</button>
+
+
+
+<button id="retryBtn" onclick="retry()" style="display:none">
+RETRY
+</button>
+
+
+
+
+<button onclick="openSettings()">
+SETTINGS
+</button>
+
+
+
+
+
+<h2 id="score">
+Score: 0
+</h2>
+
+
+
+<p id="msg">
+Start!
+</p>
+
+
+
+</div>
+
+
+
+
+<div id="howToBox">
+
+    <div class="pausePanel">
+
+        <h2>HOW TO PLAY</h2>
+
+        <p>
+            <!-- bạn viết hướng dẫn ở đây -->
+            ROLL to generate a random number. Try to get 10. When you get 10, press NEXT before the time runs out. 
+            Each successful NEXT gives you +1 Score. If you fail to press NEXT in time, the game is over. 
+            Use different difficulties to challenge yourself and unlock upgrades with Score. Try to beat your High Score!
+        </p>
+
+        <button onclick="closeHowTo()">
+            BACK
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- PAUSE -->
+
+
+<div id="pauseBox">
+
+
+<div class="pausePanel">
+
+
+<h1>PAUSED</h1>
+
+
+<button onclick="continueGame()">
+CONTINUE
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- SETTINGS -->
+
+
+<div id="settingsBox">
+
+
+<div class="settingsPanel">
+
+
+
+<h1>SETTINGS</h1>
+
+
+
+
+<h2>Difficulty</h2>
+
+
+
+<button onclick="setDifficulty('easy')">
+Easy
+</button>
+
+
+<button onclick="setDifficulty('normal')">
+Normal
+</button>
+
+
+<button onclick="setDifficulty('hard')">
+Hard
+</button>
+
+
+<button onclick="setDifficulty('insane')">
+Insane
+</button>
+
+
+<button onclick="setDifficulty('extreme')">
+Extreme
+</button>
+
+
+
+<p id="diffText">
+NORMAL
+</p>
+
+
+
+
+
+
+<button onclick="openThemes()">
+THEMES
+</button>
+
+
+
+
+
+<button onclick="resetHighScore()">
+Reset High Score
+</button>
+
+
+
+
+<button onclick="closeSettings()">
+BACK
+</button>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- THEME MENU -->
+
+
+<div id="themeBox">
+
+
+<div class="settingsPanel">
+
+
+
+<h1>THEMES</h1>
+
+
+
+<button onclick="setTheme('lcd')">
+LCD
+</button>
+
+
+
+<button onclick="setTheme('dark')">
+DARK
+</button>
+
+
+
+
+<button onclick="setTheme('blue')">
+CYBER BLUE
+</button>
+
+
+
+
+<button onclick="setTheme('red')">
+RED ALERT
+</button>
+
+
+
+
+<button onclick="setTheme('gold')">
+GOLD
+</button>
+
+
+
+
+<button onclick="closeThemes()">
+BACK
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script src="game.js"></script>
+
+<div id="personalBox">
+
+
+<div class="settingsPanel">
+
+
+<h1>PERSONALIZATION</h1>
+
+
+<h3>
+Countdown Time
+</h3>
+
+
+<input 
+type="range"
+id="timeSlider"
+min="3"
+max="20"
+value="3"
+disabled
+>
+
+
+
+<p id="timeValue">
+3s
+</p>
+
+
+
+<button onclick="unlockTime()">
+
+UNLOCK (30 SCORE)
+
+</button>
+
+
+
+
+
+
+<h3>
+Luck
+</h3>
+
+
+<input
+type="range"
+id="luckSlider"
+min="1"
+max="10"
+value="1"
+disabled
+>
+
+
+
+<p id="luckValue">
+1
+</p>
+
+
+
+
+<button onclick="unlockLuck()">
+
+UNLOCK (50 SCORE)
+
+</button>
+
+
+
+
+<button onclick="closePersonal()">
+
+BACK
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+</body>
+
+</html>
